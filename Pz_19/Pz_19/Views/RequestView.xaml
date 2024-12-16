@@ -1,0 +1,30 @@
+﻿<Window x:Class="Pz_19.Views.RequestView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pz_19.Views"
+        mc:Ignorable="d"
+        Title="Requests" Height="450" Width="800">
+    <Grid>
+        <DataGrid ItemsSource="{Binding Request}" AutoGenerateColumns="False" IsReadOnly="False" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Request ID" Binding="{Binding RequestId}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Request Date" Binding="{Binding RequestDate}"/>
+                <DataGridTextColumn Header="Home Tech ID" Binding="{Binding HomeTechId}"/>
+                <DataGridTextColumn Header="Fault Type" Binding="{Binding FaultType}"/>
+                <DataGridTextColumn Header="User ID" Binding="{Binding UserId}"/>
+                <DataGridTextColumn Header="Status ID" Binding="{Binding StatusId}"/>
+                <DataGridTextColumn Header="Completion Date" Binding="{Binding CompletionDate}"/>
+                <DataGridTextColumn Header="Specialist ID" Binding="{Binding SpecialistId}"/>
+                <DataGridTextColumn Header="Client ID" Binding="{Binding ClientId}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10">
+            <Button Content="Add" Command="{Binding AddCommand}" Width="75" Margin="5"/>
+            <Button Content="Edit" Command="{Binding EditCommand}" Width="75" Margin="5"/>
+            <Button Content="Delete" Command="{Binding DeleteCommand}" Width="75" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>
